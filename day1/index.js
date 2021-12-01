@@ -1,10 +1,10 @@
-const convertInputToArrayOfNumbers = require('../utils/index');
+// const convertInputToArrayOfNumbers = require('../utils/index');
 
 /* Part One */
 
-const depths = convertInputToArrayOfNumbers;
+// const depths = convertInputToArrayOfNumbers;
 
-export const calculateIncreasesInDepth = arrayOfDepths =>
+const calculateIncreasesInDepth = arrayOfDepths =>
   arrayOfDepths.filter((depth, index) => depth < arrayOfDepths[index + 1])
     .length;
 
@@ -12,20 +12,26 @@ export const calculateIncreasesInDepth = arrayOfDepths =>
 
 /* Part Two */
 
-export const calculateIncreasesInWindowDepth = arrayOfDepths =>
+const createRangeOfThree = (array, index, offset = 0) => {
+  return [
+    array[index + offset],
+    array[index + offset + 1],
+    array[index + offset + 2],
+  ];
+};
+
+const calculateIncreasesInWindowDepth = arrayOfDepths =>
   arrayOfDepths.filter(
     (depth, index) =>
-      [depth, arrayOfDepths[index + 1], arrayOfDepths[index + 2]].reduce(
+      createRangeOfThree(arrayOfDepths, index).reduce(
         (prev, current) => prev + current
       ) <
-      [
-        arrayOfDepths[index + 1],
-        arrayOfDepths[index + 2],
-        arrayOfDepths[index + 3],
-      ].reduce((prev, current) => prev + current)
+      createRangeOfThree(arrayOfDepths, index, 1).reduce(
+        (prev, current) => prev + current
+      )
   ).length;
 
 // console.log(calculateIncreasesInWindowDepth(depths));
 
-// exports.calculateIncreasesInDepth = calculateIncreasesInDepth;
-// exports.calculateIncreasesInWindowDepth = calculateIncreasesInWindowDepth;
+exports.calculateIncreasesInDepth = calculateIncreasesInDepth;
+exports.calculateIncreasesInWindowDepth = calculateIncreasesInWindowDepth;
