@@ -1,8 +1,21 @@
-// Read input file and convert to array of numbers
 const fs = require('fs');
-const convertInputToArrayOfNumbers = fs
-  .readFileSync('./input.txt', 'utf8')
-  .split('\n')
-  .map(number => parseInt(number));
 
-module.exports = convertInputToArrayOfNumbers;
+// Read input file and convert to array of numbers
+const convertInputToArrayOfNumbers = filePath => {
+  return fs
+    .readFileSync(filePath, 'utf8')
+    .split('\n')
+    .map(number => parseInt(number));
+};
+
+exports.convertInputToArrayOfNumbers = convertInputToArrayOfNumbers;
+
+const convertInputToArrayOfArrays = filePath => {
+  return fs
+    .readFileSync(filePath, 'utf8')
+    .toString()
+    .split('\n')
+    .map(item => item.split(' '));
+};
+
+exports.convertInputToArrayOfArrays = convertInputToArrayOfArrays;
