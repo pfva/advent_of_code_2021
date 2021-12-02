@@ -1,8 +1,8 @@
-// const convertInputToArrayOfNumbers = require('../utils/index');
+const { convertInputToArrayOfNumbers } = require('../utils/index');
 
 /* Part One */
 
-// const depths = convertInputToArrayOfNumbers;
+const depths = convertInputToArrayOfNumbers('./input.txt');
 
 const calculateIncreasesInDepth = arrayOfDepths =>
   arrayOfDepths.filter((depth, index) => depth < arrayOfDepths[index + 1])
