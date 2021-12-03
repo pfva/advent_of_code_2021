@@ -19,3 +19,9 @@ const convertInputToArrayOfArrays = filePath => {
 };
 
 exports.convertInputToArrayOfArrays = convertInputToArrayOfArrays;
+
+const convertInputToArrayOfStrings = filePath => {
+  return fs.readFileSync(filePath, 'utf8').toString().split('\n');
+};
+
+exports.convertInputToArrayOfStrings = convertInputToArrayOfStrings;

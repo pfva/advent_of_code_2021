@@ -1,8 +1,8 @@
-const { convertInputToArrayOfArrays } = require('../utils/index');
+// const { convertInputToArrayOfArrays } = require('../utils/index');
 
 /* Part One */
 
-const input = convertInputToArrayOfArrays('./input.txt');
+// const input = convertInputToArrayOfArrays('./input.txt');
 
 const calculatePosition = arrayOfInstructions => {
   let position = {
@@ -81,8 +81,8 @@ const calculatePositionWithAim = arrayOfInstructions => {
   return position;
 };
 
-const finalPosition = calculatePositionWithAim(input);
-console.log(finalPosition.horizontalPosition * finalPosition.depth);
+// const finalPosition = calculatePositionWithAim(input);
+// console.log(finalPosition.horizontalPosition * finalPosition.depth);
 
 exports.calculatePosition = calculatePosition;
 exports.calculatePositionWithAim = calculatePositionWithAim;
