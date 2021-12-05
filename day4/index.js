@@ -198,8 +198,8 @@ function drawNumberLoop(seriesOfNumbers) {
       ) {
         const boardIndex = boardsToCheck.indexOf(board);
         if (boardsToCheck.length === 1 && boardIndex === 0) {
-          console.log(boardsToCheck);
-          console.log(number);
+          // console.log(boardsToCheck);
+          // console.log(number);
           winningBoard = board;
           break outer;
         }
@@ -221,7 +221,7 @@ const sumOfUnmarkedNumbers = unmarkedNumbersInWinningBoard.reduce(
   0
 );
 
-console.log(sumOfUnmarkedNumbers);
-console.log(finalNumberCalled);
+// console.log(sumOfUnmarkedNumbers);
+// console.log(finalNumberCalled);
 
-console.log(sumOfUnmarkedNumbers * finalNumberCalled);
+// console.log(sumOfUnmarkedNumbers * finalNumberCalled);
